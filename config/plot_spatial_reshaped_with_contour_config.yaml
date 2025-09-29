@@ -1,0 +1,61 @@
+# 绘图配置文件
+# 用于 plot_spatial_reshaped_with_contour.py
+
+# 图片格式配置
+figure:
+  figsize: [5, 5]           # 图片尺寸 [宽度, 高度]
+  dpi: 300                  # 图片分辨率
+  format: 'svg'             # 图片格式 ('svg', 'png', 'pdf')
+
+# 颜色配置
+colors:
+  cmap: 'Reds'              # 颜色映射
+  contour_colors: ['olive', 'olive']  # 轮廓线颜色列表（对应两个通道）
+  contour_linewidth: 2.0    # 轮廓线宽度
+
+# 字体配置
+fonts:
+  title_fontsize: 24        # 标题字体大小
+  axis_label_fontsize: 46   # 坐标轴标签字体大小
+  origin_label_fontsize: 40 # 原点标签字体大小
+
+# Colorbar配置
+colorbar:
+  tick_fontsize: 46         # colorbar刻度字体大小
+  exponent_fontsize: 36     # colorbar指数字体大小
+  ticks: 5                  # colorbar刻度数量
+  shrink: 0.95              # colorbar收缩比例
+  width: 0.05               # colorbar宽度（比例）
+
+# 布局配置
+layout:
+  title_pad: 10             # 标题填充距离
+  label_pad: 2              # 标签填充距离
+
+# 数据集配置
+datasets:
+  h5_file_paths:
+    - '/data/1/pkq2/data_new/spec/test_pope_cut_new.h5'
+    - '/data/1/pkq2/data_new/cylinder/test_cut.h5'
+    - '/data/1/pkq2/data_new/channel/test_wins.h5'
+    - '/data/1/pkq2/data_new/s809/test_cut.h5'
+    - '/data/1/pkq2/data_new/vel/test_cut_rich.h5'
+    - '/data/1/pkq2/data_pkq/add_data/channel_flow_1000_test.h5'
+    - '/data/1/pkq2/data_pkq/add_data/fish_foil_oval2_all.h5'
+    - '/data/1/pkq2/data_pkq/add_data/test_160_cut.h5'
+    - '/data/1/pkq2/data_pkq/add_data/tree_foil_all.h5'
+    
+  dataset_names:
+    - 'pope'
+    - 'cylinder'
+    - 'channel'
+    - 's809'
+    - 'vel'
+    - 'channel2'
+    - 'fish'
+    - 'cylinder2'
+    - 'tree'
+
+# 小图配置
+patches:
+  positions: []  # 要生成的小图位置索引 [row, col][2, 3], [6, 4], [4, 6]

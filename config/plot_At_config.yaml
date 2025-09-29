@@ -1,0 +1,71 @@
+font:
+  family: 'Arial'
+colormap: 'Reds'
+
+figure:
+  size: [5, 4]
+  margins:
+    left: 0.1
+    bottom: 0.1
+    right: 0.9
+    top: 0.9
+
+title:
+  fontsize: 28
+  pad: 15
+  position: "top" # "top", "bottom"
+
+axes:
+  xlabel:
+    text: "$p'$"
+    fontsize: 28
+    style: 'italic'
+    pad: 5
+    position: 'top'
+  ylabel:
+    text: '$p$'
+    fontsize: 28
+    style: 'italic'
+    pad: 10
+    rotation: 0
+  xticks:
+    visible: false
+  yticks:
+    visible: false
+  spines:
+    remove: true
+
+colorbar:
+  mode: "normal" # "normal" or "professional"
+  label_fontsize: 22
+  ticks: 3
+  scientific_notation:
+    enabled: true
+    fontsize: 22
+    decimals: 1          # 小数位数（仅阈值触发）
+    threshold_low: 0.1  # 低于此绝对值启用科学计数法（若未强制）
+    threshold_high: 10  # 高于此绝对值启用科学计数法（若未强制）
+    exponent:
+      position: 'top'    # 指数位置: top / bottom / right / left
+      x: 0.5             # 相对 colorbar 轴坐标
+      y: 1.05            # 相对 colorbar 轴坐标
+      fontsize: 22
+  adaptive_range:
+    enabled: false
+    percentile: [0, 100]
+  fixed_range:
+    vmin: 0
+    vmax: 1
+  # normal mode: 传递给 seaborn.heatmap 的 cbar_kws
+  normal:
+    shrink: 1.0
+    aspect: 20
+    pad: 0.05
+  # professional mode: 手动创建 colorbar 的 axes，精确定位
+  professional:
+    position: [0.85, 0.15, 0.03, 0.7] # [left, bottom, width, height] in figure coordinates
+
+output:
+  format: 'svg' # 'svg' or 'png'
+  dpi: 300 # only for png
+  bbox_inches: 'tight'

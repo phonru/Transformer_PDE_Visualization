@@ -1,0 +1,123 @@
+# 空间注意力矩阵重塑绘图配置文件
+# 支持单图模式和双图对比模式的不同配置
+
+# 绘图模式配置
+plot_modes:
+  comparison:  # 双图对比模式（原来的模式）
+    description: "行重塑和列重塑对比图"
+    plot_count: 2
+    figure:
+      figsize: [12, 6.5]
+      dpi: 300
+    layout:
+      wspace: 0.05
+      subplot_left: 0.05
+      subplot_right: 0.91
+      subplot_top: 0.88
+      subplot_bottom: 0
+    titles:
+      suptitle_fontsize: 30
+      suptitle_y: 0.95
+      subplot_title_fontsize: 24
+      subplot_titles: ["Row-wise", "Column-wise"]
+    axis_labels:
+      fontsize: 20
+      x_label: "$s'$"
+      y_label: "$s$"
+      labelpad: 5
+    colorbar:
+      fontsize: 24
+      position:
+        left: 0.92
+        bottom: 0.06
+        width: 0.02
+        height: 0.75
+      tick_count: 5
+    colormap: "Reds"
+    grid_ticks:
+      enabled: true
+      positions: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+  
+  single_row:  # 单图模式 - 行重塑
+    description: "仅显示行重塑图"
+    plot_count: 1
+    figure:
+      figsize: [5, 4]
+      dpi: 300
+    layout:
+      subplot_left: 0.1
+      subplot_right: 0.90
+      subplot_top: 0.9
+      subplot_bottom: 0.1
+    titles:
+      suptitle_fontsize: 24
+      suptitle_y: 0.95
+      subplot_title_fontsize: 20
+      subplot_titles: ["Row-wise Reshaped"]
+    axis_labels:
+      fontsize: 38
+      x_label: "$x$"
+      y_label: "$y$"
+      labelpad: 10
+    colorbar:
+      fontsize: 38
+      position:
+        left: 0.85
+        bottom: 0.1
+        width: 0.03
+        height: 0.8
+      tick_count: 5
+    colormap: "Reds"
+    grid_ticks:
+      enabled: true
+      positions: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+  
+  single_col:  # 单图模式 - 列重塑
+    description: "仅显示列重塑图"
+    plot_count: 1
+    figure:
+      figsize: [5, 4]
+      dpi: 300
+    layout:
+      subplot_left: 0.1
+      subplot_right: 0.90
+      subplot_top: 0.9
+      subplot_bottom: 0.1
+    titles:
+      suptitle_fontsize: 24
+      suptitle_y: 0.95
+      subplot_title_fontsize: 20
+      subplot_titles: ["Row-wise Reshaped"]
+    axis_labels:
+      fontsize: 38
+      x_label: "$x$"
+      y_label: "$y$"
+      labelpad: 5
+    colorbar:
+      fontsize: 38
+      position:
+        left: 0.85
+        bottom: 0.1
+        width: 0.03
+        height: 0.8
+      tick_count: 5
+    colormap: "Reds"
+    grid_ticks:
+      enabled: true
+      positions: [0, 10, 20, 30, 40, 50, 60, 70, 80, 90, 100]
+
+# 默认配置
+default:
+  plot_mode: "comparison"  # 默认使用双图对比模式
+  
+# 文件命名规则
+file_naming:
+  comparison: "spatial_reshaped_{data_type}"
+  single_row: "spatial_reshaped_row_{data_type}"
+  single_col: "spatial_reshaped_col_{data_type}"
+  timestep_suffix: "_t{timestep}"
+
+# 输出目录结构
+output_structure:
+  base_pattern: "dataset_{dataset_id}/sample_{sample_id}/layer_{layer_idx}/"
+  file_pattern: "{filename}.svg"

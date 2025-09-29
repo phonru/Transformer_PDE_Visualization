@@ -1,0 +1,81 @@
+# 数据集可视化配置文件
+# 图像格式配置
+visualization:
+  # 图像尺寸参数
+  figure:
+    width: 5                  # 图像宽度
+    height: 5                 # 图像高度
+    dpi: 300                  # 图像DPI
+  
+  # 字体大小参数  
+  fonts:
+    main_title: 56            # 主标题字体大小
+    time_title: 40            # 通道标题字体大小
+    colorbar_label: 45        # 颜色条标签字体大小
+  
+  # 坐标轴标签参数
+  axis_labels:
+    x_labelpad: 10            # x轴标签距离轴线的间距
+    y_labelpad: 20            # y轴标签距离轴线的间距
+    x_fontsize: 45            # x轴标签字体大小 正文50
+    y_fontsize: 45            # y轴标签字体大小
+  
+  # 布局参数
+  layout:
+    subplot_left: 0.08        # 子图左边距
+    subplot_right: 0.90       # 子图右边距
+    subplot_bottom: 0.05      # 子图底部边距
+    subplot_top: 0.80         # 子图顶部边距
+  
+  # 颜色条参数
+  colorbar:
+    left: 0.91                # 颜色条左边距
+    bottom: 0.05              # 颜色条底部边距
+    width: 0.04               # 颜色条宽度
+    height: 0.75              # 颜色条高度
+    ticks_num: 5              # 颜色条刻度数量
+    format: '%.1f'            # 颜色条数值格式
+  
+  # 绘图参数
+  plot:
+    contour_levels: 50        # 等高线层数
+    colormap: 'RdBu_r'        # 颜色映射
+    
+  # 等高线参数
+  contour:
+    levels: [0]               # 等高线水平
+    color: 'olive'            # 等高线颜色
+    linewidth: 2            # 等高线宽度
+
+# 数据集信息
+datasets:
+  0:
+    name: 'pope'
+    path: '/data/1/pkq2/data_new/spec/test_pope_cut_new.h5'
+  1:
+    name: 'cylinder'
+    path: '/data/1/pkq2/data_new/cylinder/test_cut.h5'
+  2:
+    name: 'channel'
+    path: '/data/1/pkq2/data_new/channel/test_wins.h5'
+  3:
+    name: 's809'
+    path: '/data/1/pkq2/data_new/s809/test_cut.h5'
+  4:
+    name: 'vel'
+    path: '/data/1/pkq2/data_new/vel/test_cut_rich.h5'
+  5:
+    name: 'channel_2'
+    path: '/data/1/pkq2/data_pkq/add_data/channel_flow_1000_test.h5'
+  6:
+    name: 'fish'
+    path: '/data/1/pkq2/data_pkq/add_data/fish_foil_oval2_all.h5'
+  7:
+    name: 'tree'
+    path:  '/data/1/pkq2/data_pkq/add_data/test_160_cut.h5'
+  8:
+    name: 'tree'
+    path: '/data/1/pkq2/data_pkq/add_data/tree_foil_all.h5'
+  9:
+    name: 'cylinder_time'
+    path: '/data/1/pkq2/data4/cylinder_data1_train_time.h5'
